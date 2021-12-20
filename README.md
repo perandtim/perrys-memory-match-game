@@ -52,7 +52,7 @@ _useEffect_ wasn't working as I had hoped.  I 'hacked' around this issue by pass
 into to each card, and then passed the deck back to the 'card was clicked' callback function, where it was then used to
 check for matches.  This doesn't feel right, and in real life I would have asked a peer for design suggestions.
 
-##Unimplemented Extra Features / Ideas
+## Unimplemented Extra Features / Ideas
 I would have liked to add sound to this app, but ran out of time for this feature.
 
 I would also have enjoyed adding in some CSS animation-- such as "flipping" a card over from front to back and vice-versa.
