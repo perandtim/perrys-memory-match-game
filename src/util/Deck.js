@@ -72,15 +72,22 @@ class Deck {
                 // The deck is now generated and exists in the server; have to call a
                 // second API call to retrieve the custom built deck.
                 url = `${this.#serviceURL}/${resp.deck_id}/draw/?count=${cardCount}`;
-                request = await fetch(url);
-                const cards = await request.text();
-                resp = JSON.parse(cards);
-                if (resp.success) {
-                    return resp.cards;
+                try {
+                    request = await fetch(url);
+                    const cards = await request.text();
+                    resp = JSON.parse(cards);
+                    if (resp.success) {
+                        return resp.cards;
+                    } else {
+                        console.log('Error obtaining deck of cards from service');
+                    }
                 }
-                else {
-                    console.log('Error calling deck of card service');
+                catch (error) {
+                    console.log(error);
                 }
+            }
+            else {
+                console.log('Error creating deck of cards from service');
             }
         }
         catch (error) {
