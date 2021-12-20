@@ -18,10 +18,6 @@
     border-radius: 5px;
 }
 
-.card {
-
-}
-
 .card-image {
     width: 100px;
     border: solid 2px transparent;
@@ -30,4 +26,20 @@
 .card-image:hover {
     border: solid 2px red;
     border-radius: 5px;
+}
+
+.winner img {
+    max-width: 300px;
+    width: 50vw;
+    padding: 20px;
+}
+
+.blink {
+    animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
 }

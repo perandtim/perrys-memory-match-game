@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {useState} from "react";
 import {Form, Button, Container} from "react-bootstrap";
 
-function SelectCards({submitCallback, cancelCallback}) {
+function SelectCards({submitCallback, cancelCallback, disableButtons}) {
 
     const [count, setCount] = useState(24);
 
@@ -26,9 +26,6 @@ function SelectCards({submitCallback, cancelCallback}) {
                 </Form.Group>
                 <Button variant="primary" type="submit">
                     Submit
-                </Button>
-                <Button variant="outline-secondary" type="button" onClick={() => cancelCallback()} >
-                    Cancel
                 </Button>
             </Form>
         </div>

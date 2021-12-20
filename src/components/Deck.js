@@ -1,4 +1,4 @@
-// Card deck and graphics uses the service at https://www.deckofcardsapi.com/
+// MemoryCard deck and graphics uses the service at https://www.deckofcardsapi.com/
 
 class Deck {
 
@@ -80,11 +80,8 @@ class Deck {
         }
         catch (error) {
             console.log(error);
-            return false;
         }
-
     }
-
 }
 
 export default Deck;
