@@ -56,11 +56,12 @@ class Deck {
         // read / understand / maintain:
         // randomDeck.push(fullDeck.splice(Math.floor(Math.random() * fullDeck.length),1));
 
-        // Build up the card code strings for the RESTful API
-        console.log(`${randomDeck.join(',')}`);
-        let partialCards = `${randomDeck.join(',')},${randomDeck.join(',')}`;
+        // Build up the card code strings for the RESTful API-- the game needs two of each
+        // card, so the API call will be called with the same series of randomly selected
+        // cards twice.
+        let selectedCards = `${randomDeck.join(',')},${randomDeck.join(',')}`;
 
-        let url = `${this.#serviceURL}/new/shuffle/?cards=${partialCards}`;
+        let url = `${this.#serviceURL}/new/shuffle/?cards=${selectedCards}`;
 
         try {
             let request = await fetch(url);
@@ -68,13 +69,17 @@ class Deck {
             let resp = JSON.parse(newDeckResponse);
 
             if (resp.success) {
-
+                // The deck is now generated and exists in the server; have to call a
+                // second API call to retrieve the custom built deck.
                 url = `${this.#serviceURL}/${resp.deck_id}/draw/?count=${cardCount}`;
                 request = await fetch(url);
                 const cards = await request.text();
                 resp = JSON.parse(cards);
                 if (resp.success) {
                     return resp.cards;
+                }
+                else {
+                    console.log('Error calling deck of card service');
                 }
             }
         }

@@ -1,8 +1,7 @@
-import React, {useEffect} from "react";
 import {useState} from "react";
-import {Form, Button, Container} from "react-bootstrap";
+import {Form, Button} from "react-bootstrap";
 
-function SelectCards({submitCallback, cancelCallback, disableButtons}) {
+function StartGameControls({submitCallback}) {
 
     const [count, setCount] = useState(24);
 
@@ -32,4 +31,4 @@ function SelectCards({submitCallback, cancelCallback, disableButtons}) {
     );
 }
 
-export default SelectCards;
+export default StartGameControls;

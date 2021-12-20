@@ -1,10 +1,15 @@
+// Framework libraries
 import './App.css';
 import {useCallback, useState} from "react";
-import SelectCards from "./components/SelectCards";
+import './bootstrap.min.css';
+
+// Custom components for this project
+import StartGameControls from "./components/StartGameControls";
 import MemoryCard from "./components/MemoryCard";
 import {cardStates} from "./util/constants";
-import Deck from "./components/Deck";
-import './bootstrap.min.css';
+import Deck from "./util/Deck";
+
+// Resources
 import winnerImage from './images/winner01.jpg';
 
 
@@ -15,7 +20,6 @@ function App() {
     const [getDeck, setDeck] = useState([]);
     const [numberOfVisibleCards, setNumberOfVisibleCards] = useState(0);
     const [gameWon, setGameWon] = useState(false);
-
 
     const [, updateState] = useState();
     const forceDOMUpdate = useCallback(() => updateState({}), []);
@@ -84,7 +88,7 @@ function App() {
 
     return (
         <div className="App">
-            <SelectCards submitCallback={getRandomizedCardDeck}/>
+            <StartGameControls submitCallback={getRandomizedCardDeck}/>
             {numberOfVisibleCards > 0 && <div className='card-table'>
                 <h4>There are {numberOfVisibleCards} cards remaining.</h4>
                 {
