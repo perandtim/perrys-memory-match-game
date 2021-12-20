@@ -24,7 +24,7 @@ function StartGameControls({submitCallback}) {
                     </Form.Text>
                 </Form.Group>
                 <Button variant="primary" type="submit">
-                    Submit
+                    Start Game
                 </Button>
             </Form>
         </div>

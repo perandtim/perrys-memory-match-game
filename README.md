@@ -4,15 +4,16 @@ _Developed by Perry Pederson / perry_pederson@outlook.com_
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 # Running the project
 Download the code, run 'npm install' in the root directory, then 'npm start'.
-## Task Overview
+## Project Overview
 This was a pretty fun task.
 
 I made heavy use of a public [52-card generating REST service](https://deckofcardsapi.com/), using API calls to 
 specify the cards in a deck as well as to randomly generate a deck made up of these cards. The returned JSON object
-contained URL's to each playing deck card, so I didn't have to store or implement the cards in any way.
+contained URL's to each playing deck card, so I didn't have to store or implement the cards in any way.  There was no
+requirement on what type of cards to use for this game, so I went old-school with a common deck of 52 cards.
 
-A standard JS class library _Deck.js_ (which I wrote) contains the logic of generating a random subset of the 52 cards to whatever number 
-of cards the player chooses.
+A standard JS class library _Deck.js_ (which I wrote) contains the logic of generating a random subset of the 52 cards 
+to whatever number of cards the player chooses.
 
 A _MemoryCard_ JSX component renders the card in either a face-up or face-down state.  Lesson learned: I used the
 [react bootstrap](https://react-bootstrap.github.io/) framework, which has a "Card" CSS component.  Using the name "Card"
@@ -30,7 +31,8 @@ One requirement that I purposefully omitted was that the cards were to be displa
 
 With my added functionality of having a user-selectable number of starting cards, the layout began to get a mite bit
 messy looking depending on the number of cards the user was starting out-- depending on browser width and such placing
-cards in a flex table or equivalent didn't look good at different card number selections.  Having the cards simply
+cards in a flex table or equivalent didn't look good at different card number selections.  Having the cards displayed
+in one large card-wrapping row looked better.
 
 I had initially created a _CardTable_ component that would manage the deck of cards, but development got ugly attempting
 to have it maintain state between which two cards were selected and letting the parent "App.js" code know when the game
@@ -52,6 +54,10 @@ check for matches.  This doesn't feel right, and in real life I would have asked
 
 ##Unimplemented Extra Features / Ideas
 I would have liked to add sound to this app, but ran out of time for this feature.
+
+I would also have enjoyed adding in some CSS animation-- such as "flipping" a card over from front to back and vice-versa.
+
+I wouldn't have minded adding the ability to resize the cards.
 
 In a "real" production app I would have moved a few constants into a configuration file-- specifically the URL to the
 card deck generating service, and a value defining the number of milliseconds to pause in between flipping the cards

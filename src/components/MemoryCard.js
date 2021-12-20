@@ -12,7 +12,7 @@ const MemoryCard = ({card, deck}) => {
     return (
         <span className='card-container'>
             {
-                (cardDetails.state === cardStates.showFrontOfCard || cardDetails.state === cardStates.frontCardSelected)
+                (cardDetails.state === cardStates.showFrontOfCard)
                 && <img className='card-image' src={cardDetails.image} alt={cardDetails.code}
                          onClick={clicked}/>
             }
