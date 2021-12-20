@@ -1,6 +1,8 @@
 # Perry's Memory Match Game
 _Developed by Perry Pederson / perry_pederson@outlook.com_
 
+![Screenshot](https://github.com/perandtim/perrys-memory-match-game/blob/master/src/images/screenshot.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 # Running the project
 Download the code, run 'npm install' in the root directory, then 'npm start'.
