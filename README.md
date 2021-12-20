@@ -64,18 +64,24 @@ card deck generating service, and a value defining the number of milliseconds to
 'over'.
 
 ## Directories / Source Code / Files
+
 ###Components
+
 ####MemoryCard.js
     Renders a playing card, either shown or "on its back" depending on the state of the card.
+
 ####StartGameControls.js
     Going above the requirements: This component allows a user to enter an even number between 2 and 52.
 
     While the original requirements stated that the game should have twenty-four cards, I was also told to add extra
     features as I saw fit.
+
 ###Util
+
 ####constants.js
     Both the App.js and MemoryCard.js files needed to set and respond to different card states-- face up, face down, 
     or hidden.  A simple shared enum-like class accomplished this.
+
 ####Deck.js
     Since this wasn't a React component, I placed this file into the Util directory.
     THis is a reusable JavaScript class that will generate a deck of (n) cards where each card in the deck exists twice.
